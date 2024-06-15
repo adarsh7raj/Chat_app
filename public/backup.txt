@@ -1,0 +1,39 @@
+const socket = io();
+let data;
+
+socket.on("total_client", (value) => {
+    console.log(value);
+
+    const totalclients = document.getElementById("current_user");
+    totalclients.innerHTML = "Total clients:" + value;
+    const message_container = document.querySelector(".message_container");
+    const name_input = document.querySelector(".input");
+    const message_form = document.querySelector(".input_data");
+    const message_input = document.querySelector(".message_field");
+
+    message_form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        on_submit();
+        console.log(message_input.value);
+    });
+
+    function on_submit() {
+        const data = {
+            name: name_input.value,
+            message: message_input.value,
+            date: new Date()
+        };
+        socket.emit("message_value", data);
+        add_message(false, data);
+        message_input.value = "";
+    }
+
+    socket.on("message_data", (receivedData) => {
+        add_message(true, receivedData);
+    });
+
+    function add_message(own_message, messageData) {
+        let element = `<li class="${own_message ? 'message_received' : 'message_sent'}"><p class="message">${messageData.message} </p><span class="status">• ${moment(messageData.dateTime).fromNow()}</span></li>`;
+        message_container.innerHTML+=element;
+    }
+});

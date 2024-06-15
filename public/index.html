@@ -1,0 +1,47 @@
+<DOCTYPE html>
+<html lang="en"><!--<li class="message_received"><p class="message">hello, hi how are you . </p><span class="status">• blue-heaven ,7 jan,12:28AM</span></li>
+    <li class="message_sent"><p class="message">hello,i am fine.</p><span class="status">• blue-heaven , 7 jan,12:28AM</span></li>-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat_app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="title"> <i class="fa-regular fa-comment-dots"></i> We_Chat.</h1>
+    <div class="main">
+        <div class="name">
+            <span class="user">
+                <i class="fa-regular fa-user"></i>
+            </span>
+            <input type="text" class="input" id="user" maxlength="20" value="">
+        </div>
+    
+    <ul class="message_container">
+
+
+
+       
+    </ul>
+    <form class="input_data">
+        <input class="message_field" type="text">
+        <div class="divider"></div>
+        <button type="submit" class="send">Send<span><i class="fa-solid fa-paper-plane"></i></span></button>
+    </form>
+   
+    </div>
+    <h3 id="current_user"></h3>
+    <script src="/socket.io/socket.io.js"></script>
+ 
+ <!-- Include Moment.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
